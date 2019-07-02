@@ -6,6 +6,9 @@
 
 
     <script>
+
+      var h = document.documentElement.clientHeight
+
       window.addEventListener('scroll', function (e){
         var scrolled = window.pageYOffset;
         console.log(scrolled);
@@ -27,6 +30,39 @@
           document.getElementById("oval2").style.marginRight = -(scrolled*0.1)+'px';
         }
 
+        var circle = document.getElementById("Oval");
+        var a = document.getElementById("A");
+        var f = document.getElementById("F");
+        var x = document.getElementsByTagName("a");
+        var change = h*.7;
+
+        if(scrolled >= 0 && scrolled < (h)){
+          x[0].style.color = "black";
+          x[1].style.color = "black";
+          x[2].style.color = "black";
+          x[3].style.color = "black";
+        }else if(scrolled >= h && scrolled < (h*2+change)){
+          x[0].style.color = "#c5ece0";
+          x[1].style.color = "#c5ece0";
+          x[2].style.color = "#c5ece0";
+          x[3].style.color = "#c5ece0";
+        }else if(scrolled >= (h*2+change) && scrolled < (h*3+change)){
+          x[0].style.color = "#729c95";
+          x[1].style.color = "#729c95";
+          x[2].style.color = "#729c95";
+          x[3].style.color = "#729c95";
+        }else if(scrolled >= (h*3+change) && scrolled < (h*4+change)){
+          x[0].style.color = "white";
+          x[1].style.color = "white";
+          x[2].style.color = "white";
+          x[3].style.color = "white";
+        }else if(scrolled >= (h*4) && scrolled < (h*5+(change*2))){
+          x[0].style.color = "#171a5b";
+          x[1].style.color = "#171a5b";
+          x[2].style.color = "#171a5b";
+          x[3].style.color = "#171a5b";
+        }
+
         const pic = document.getElementById('firstImg');
         const pic2 = document.getElementById('secondImg');
         // pic.style.top = -(scrolled*0.1)+'px';
@@ -46,7 +82,7 @@
         <div class="menu">
           <img class="logo" src="logoGrey.png">
           <nav>
-            <ul>
+            <ul id="menu">
               <li class="about"><a href="#about">About</a></li>
               <li class="work"><a href="#work">Work</a></li>
               <li class="projects"><a href="#projects">Projects</a></li>
@@ -319,7 +355,23 @@
 
 
       <div class="footer">
-        <img class="logo" src="logo.png">
+        <svg width="114px" height="114px" viewBox="0 0 114 114" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Artboard" transform="translate(-73.000000, -1505.000000)">
+                    <g id="Logo" transform="translate(75.000000, 1507.000000)">
+                        <circle id="Oval" stroke="#FFFFFF" stroke-width="4" cx="55" cy="55" r="55"></circle>
+                        <text id="F" font-family="Ayuthaya" font-size="48" font-weight="normal" fill="#FFFFFF">
+                            <tspan x="55.812766" y="83">F</tspan>
+                        </text>
+                        <text id="A" font-family="Ayuthaya" font-size="48" font-weight="normal" fill="#FFFFFF">
+                            <tspan x="25.812766" y="64">A</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        <!-- <img class="logo" src="logo.png"> -->
         <div class="footer-social-icons">
 
             <ul class="social-icons">
@@ -332,9 +384,9 @@
 
 
 
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-      <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
       <script src="svgAnimate.js"></script>
       <script type="text/javascript">
         $(document).ready(function(){
